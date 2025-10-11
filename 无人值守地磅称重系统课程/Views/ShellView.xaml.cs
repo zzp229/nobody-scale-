@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,17 +13,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using 无人值守地磅称重系统课程.ViewModels;
 
 namespace 无人值守地磅称重系统课程.Views
 {
     /// <summary>
     /// ShellView.xaml 的交互逻辑
     /// </summary>
-    public partial class ShellView : Window
+    public partial class ShellView : MetroWindow
     {
         public ShellView()
         {
             InitializeComponent();
+
+            DataContext = App.Current.Services.GetService<ShellViewModel>();
+
+
         }
     }
 }

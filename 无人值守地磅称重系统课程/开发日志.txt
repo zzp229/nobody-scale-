@@ -1,0 +1,8 @@
+﻿d:DataContext="{d:DesignInstance vm:ShellViewModel}"
+                  xmlns:vm="clr-namespace:无人值守地磅称重系统课程.ViewModels"
+                  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                  Background="{DynamicResource MaterialDesign.Brush.Background}"
+                  FontFamily="Microsoft YaHei"
+                  TextElement.FontSize="16"
+                  TextElement.FontWeight="Regular"
+                  TextElement.Foreground="{DynamicResource MaterialDesignBody}"
