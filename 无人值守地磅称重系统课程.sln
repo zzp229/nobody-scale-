@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "无人值守地磅称重系统课程", "无人值守地磅称重系统课程\无人值守地磅称重系统课程.csproj", "{F8A77C53-1757-45F8-A505-6F67021D30B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8A77C53-1757-45F8-A505-6F67021D30B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A77C53-1757-45F8-A505-6F67021D30B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A77C53-1757-45F8-A505-6F67021D30B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A77C53-1757-45F8-A505-6F67021D30B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {525FB669-2433-4DAB-BF29-01DFE5B2842E}
+	EndGlobalSection
+EndGlobal
