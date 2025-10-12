@@ -1,4 +1,4 @@
-﻿d:DataContext="{d:DesignInstance vm:ShellViewModel}"
+﻿                    d:DataContext="{d:DesignInstance vm:ShellViewModel}"
                   xmlns:vm="clr-namespace:无人值守地磅称重系统课程.ViewModels"
                   xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                   Background="{DynamicResource MaterialDesign.Brush.Background}"
