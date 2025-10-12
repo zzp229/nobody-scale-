@@ -8,15 +8,93 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:无人值守地磅称重系统课程.ViewModels"
     d:DataContext="{d:DesignInstance vm:LoginViewModel}"
-    d:DesignHeight="1000"
-    d:DesignWidth="188 0"
-    Background="{DynamicResource MaterialDesign.Brush.Background}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Background="White"
     FontFamily="Microsoft YaHei"
     TextElement.FontSize="16"
     TextElement.FontWeight="Regular"
     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
     mc:Ignorable="d">
-    <Grid >
-        <TextBlock Text=" login" FontSize="300"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                    <GradientStop Offset="0.0" Color="#30B9B7" />
+                    <GradientStop Offset="0.5" Color="#30B9B7" />
+                    <GradientStop Offset="1" Color="#FFFFFF" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel
+                Margin="10"
+                HorizontalAlignment="Center"
+                Orientation="Horizontal">
+                <materialDesign:PackIcon
+                    Width="50"
+                    Height="50"
+                    VerticalAlignment="Center"
+                    Foreground="#FF7043"
+                    Kind="YinYang" />
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="44"
+                    Foreground="White"
+                    Style="{StaticResource MaterialDesignTitleSmallTextBlock}"
+                    Text="无人值守地磅称重系统" />
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="1" Background="White">
+            <StackPanel
+                Width="240"
+                Margin="10"
+                Orientation="Horizontal">
+                <TextBlock
+                    Width="80"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource MaterialDesignTitleSmallTextBlock}"
+                    Text="用户名" />
+                <TextBlock />
+                <TextBox
+                    Width="160"
+                    materialDesign:HintAssist.Hint="Name"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    Text="" />
+            </StackPanel>
+            <StackPanel
+                Width="240"
+                Margin="10"
+                Orientation="Horizontal">
+                <TextBlock
+                    Width="80"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource MaterialDesignTitleSmallTextBlock}"
+                    Text="密码" />
+                <TextBlock />
+                <PasswordBox
+                    Width="160"
+                    materialDesign:HintAssist.Foreground="Green"
+                    materialDesign:HintAssist.Hint="Password"
+                    materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                    Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+            </StackPanel>
+            <StackPanel>
+                <Button
+                    Width="160"
+                    Margin="80,0,0,0"
+                    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                    materialDesign:ButtonProgressAssist.Value="-1"
+                    Background="#30B9B7"
+                    BorderBrush="#30B9B7"
+                    Content="登录"
+                    Style="{StaticResource MaterialDesignRaisedButton}" />
+            </StackPanel>
+        </StackPanel>
+
     </Grid>
 </UserControl>
