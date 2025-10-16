@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Company.Sqlite
 {
-    internal class SqliteDbContext : DbContext
+    public class SqliteDbContext : DbContext
     {
+        // 创建数据库映射
         public SqliteDbContext() : base("SqliteDbContext")
         {
             
