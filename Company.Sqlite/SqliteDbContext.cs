@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Company.Sqlite.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,6 +14,18 @@ namespace Company.Sqlite
         public SqliteDbContext() : base("SqliteDbContext")
         {
             
+        }
+
+        public DbSet<User> Users { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+
+            var sqliteConnect = new DropCreateDatabaseIfModelChanges<SqliteDbContext>();
+
+            Database.SetInitializer(sqliteConnect);
         }
     }
 }
