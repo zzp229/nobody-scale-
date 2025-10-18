@@ -27,6 +27,7 @@ namespace 无人值守地磅称重系统课程.ViewModels
 
         private void Login()
         {
+            Session.CurrentUser.Password = "12345678";
             if(string.IsNullOrEmpty(Session.CurrentUser.UserName) || string.IsNullOrEmpty(Session.CurrentUser.Password))
             {
                 MessageBox.Show("请输入用户名和密码！");

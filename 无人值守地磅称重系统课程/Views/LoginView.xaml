@@ -92,7 +92,9 @@
                     Background="#30B9B7"
                     BorderBrush="#30B9B7"
                     Content="登录"
-                    Style="{StaticResource MaterialDesignRaisedButton}" />
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Command="{Binding LoginCommand}"
+                    />
             </StackPanel>
         </StackPanel>
 
