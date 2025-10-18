@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Company.Sqlite.Repositories
 {
-    public class RepositoryBase
+    public abstract class RepositoryBase
     {
         protected static SqliteDbContext db { get; } = new Lazy<SqliteDbContext>().Value;
     }

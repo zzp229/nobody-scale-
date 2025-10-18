@@ -63,7 +63,7 @@
                     Width="160"
                     materialDesign:HintAssist.Hint="Name"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                    Text="" />
+                    Text="{Binding Session.CurrentUser.UserName, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
             <StackPanel
                 Width="240"
