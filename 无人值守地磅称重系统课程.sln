@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Hardware", "Company
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Sqlite", "Company.Sqlite\Company.Sqlite.csproj", "{D3164209-D3EE-4A9D-8CA1-5AAC6BD2B0C9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12窗体传参", "12窗体传参\12窗体传参.csproj", "{9C7A2A87-9A35-45DB-8435-A43D270B4477}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,16 @@ Global
 		{D3164209-D3EE-4A9D-8CA1-5AAC6BD2B0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3164209-D3EE-4A9D-8CA1-5AAC6BD2B0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3164209-D3EE-4A9D-8CA1-5AAC6BD2B0C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C7A2A87-9A35-45DB-8435-A43D270B4477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C7A2A87-9A35-45DB-8435-A43D270B4477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C7A2A87-9A35-45DB-8435-A43D270B4477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C7A2A87-9A35-45DB-8435-A43D270B4477}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9C7A2A87-9A35-45DB-8435-A43D270B4477} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {525FB669-2433-4DAB-BF29-01DFE5B2842E}
