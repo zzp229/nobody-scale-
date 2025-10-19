@@ -1,4 +1,6 @@
-﻿using MahApps.Metro.Controls;
+﻿using Company.Sqlite.Interfaces;
+using Company.Sqlite.Models;
+using MahApps.Metro.Controls;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -22,11 +24,24 @@ namespace 无人值守地磅称重系统课程.Views
     /// </summary>
     public partial class ShellView : MetroWindow
     {
-        public ShellView()
+        public ShellView(IUserRepository userRepository)
         {
             InitializeComponent();
-
             DataContext = App.Current.Services.GetService<ShellViewModel>();
+            User user = userRepository.Select("admin");
+            if (user == null)
+            {
+                user = new User();
+                user.UserName = "admin";
+                user.Password = "12345678";
+                user.Role = 0; //0代表超级管理员
+                user.InsertDate = DateTime.Now;
+                var count = userRepository.Insert(user);
+                if (count > 0)
+                {
+                    MessageBox.Show("已自动创建初始管理员账号：admin，密码：12345678，请登录后尽快修改密码！");
+                }
+            }
 
             container.Content = App.Current.Services.GetService<LoginView>();
         }
