@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using Company.Sqlite.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using 无人值守地磅称重系统课程.Interfaces;
+using 无人值守地磅称重系统课程.Models.Message;
 
 namespace 无人值守地磅称重系统课程.ViewModels
 {
@@ -36,8 +38,13 @@ namespace 无人值守地磅称重系统课程.ViewModels
 
             var list = UserRepository.GetAll();
             var user = list.Find(t=>t.UserName == Session.CurrentUser.UserName && t.Password == Session.CurrentUser.Password);
+            // 验证成功进入首页
             if (user != null)
             {
+
+                // 这个是发送消息，卧槽
+                WeakReferenceMessenger.Default.Send(new LoginSuccessMessage(user));
+
             }
             else
             {

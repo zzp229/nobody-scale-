@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace 无人值守地磅称重系统课程.ViewModels
 {
-    internal class ShellViewModel : ObservableObject
+    internal class MainViewModel:ObservableObject
     {
     }
 }

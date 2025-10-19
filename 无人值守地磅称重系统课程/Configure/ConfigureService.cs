@@ -32,6 +32,9 @@ namespace 无人值守地磅称重系统课程.Configure
 
             services.AddSingleton<LoginView>();
             services.AddSingleton<LoginViewModel>();
+            services.AddSingleton<MainView>();
+            services.AddSingleton<MainViewModel>();
+
 
             return services.BuildServiceProvider();
         }

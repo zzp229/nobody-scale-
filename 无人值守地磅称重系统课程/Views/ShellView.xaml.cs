@@ -1,4 +1,5 @@
-﻿using Company.Sqlite.Interfaces;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using Company.Sqlite.Interfaces;
 using Company.Sqlite.Models;
 using MahApps.Metro.Controls;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +16,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using 无人值守地磅称重系统课程.Interfaces;
+using 无人值守地磅称重系统课程.Models.Message;
 using 无人值守地磅称重系统课程.ViewModels;
 
 namespace 无人值守地磅称重系统课程.Views
@@ -24,9 +27,11 @@ namespace 无人值守地磅称重系统课程.Views
     /// </summary>
     public partial class ShellView : MetroWindow
     {
-        public ShellView(IUserRepository userRepository)
+        private ISession Session { get; }
+        public ShellView(IUserRepository userRepository, ISession session)
         {
             InitializeComponent();
+            Session = session; 
             DataContext = App.Current.Services.GetService<ShellViewModel>();
             User user = userRepository.Select("admin");
             if (user == null)
@@ -44,6 +49,25 @@ namespace 无人值守地磅称重系统课程.Views
             }
 
             container.Content = App.Current.Services.GetService<LoginView>();
+
+            // 登录成功后跳转到主页面
+            // 这里是接收消息
+            WeakReferenceMessenger.Default.Register<LoginSuccessMessage>(this, (sender, arg) =>
+            {
+                Session.CurrentUser = arg.Value;    // value是发布时候的user
+                container.Content = App.Current.Services.GetService<MainView>();
+                WindowState = WindowState.Normal;
+                Width = 1880;
+                Height = 1000;
+                SetWindow();
+            });
+        }
+
+        private void SetWindow()
+        {
+            Left = (SystemParameters.WorkArea.Width - Width) / 2;
+            Top = (SystemParameters.WorkArea.Height - Height) / 2;
+
         }
     }
 }
