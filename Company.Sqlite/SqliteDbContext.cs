@@ -1,4 +1,5 @@
 ﻿using Company.Sqlite.Models;
+using SQLite.CodeFirst;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,16 +13,16 @@ namespace Company.Sqlite
     /// <summary>
     /// SQLite数据库配置类
     /// </summary>
-    public class SQLiteConfiguration : DbConfiguration
-    {
-        public SQLiteConfiguration()
-        {
-            SetProviderFactory("System.Data.SQLite", SQLiteFactory.Instance);
-            SetProviderFactory("System.Data.SQLite.EF6", SQLiteFactory.Instance);
-        }
-    }
+    //public class SQLiteConfiguration : DbConfiguration
+    //{
+    //    public SQLiteConfiguration()
+    //    {
+    //        SetProviderFactory("System.Data.SQLite", SQLiteFactory.Instance);
+    //        SetProviderFactory("System.Data.SQLite.EF6", SQLiteFactory.Instance);
+    //    }
+    //}
 
-    [DbConfigurationType(typeof(SQLiteConfiguration))]
+    //[DbConfigurationType(typeof(SQLiteConfiguration))]
     public class SqliteDbContext : DbContext
     {
         // 创建数据库映射
@@ -34,10 +35,10 @@ namespace Company.Sqlite
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            // base.OnModelCreating(modelBuilder);
 
-
-            var sqliteConnect = new DropCreateDatabaseIfModelChanges<SqliteDbContext>();
+            // 注入sqliteDbContext，没表就新建表
+            var sqliteConnect = new SqliteCreateDatabaseIfNotExists<SqliteDbContext>(modelBuilder);
 
             Database.SetInitializer(sqliteConnect);
         }
