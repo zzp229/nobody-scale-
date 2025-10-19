@@ -1,4 +1,5 @@
-﻿using Company.Sqlite.Interfaces;
+﻿using Company.Core.Config;
+using Company.Sqlite.Interfaces;
 using Company.Sqlite.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -25,6 +26,7 @@ namespace 无人值守地磅称重系统课程.Configure
 
             // 注册业务层
             services.AddSingleton<ISession, Session>();
+            services.AddSingleton<IConfigManager, ConfigManager>();
 
             // 注册UI层
             services.AddSingleton<ShellView>();
